@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import Context from './Context';
 
-function Button({count, onUpdate}) {
+
+function Button() {
+    const { count, updateState } = useContext(Context);
     return (
         <div>
-            <button onClick={() => onUpdate(count + 1)} >Check Counter</button>
+            <button onClick={ () => updateState(count +1)} >Check Counter</button>
         </div>
     )
 }
